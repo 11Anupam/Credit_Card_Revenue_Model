@@ -4,14 +4,15 @@ Loads the raw Kaggle 'Credit Card Customers' (BankChurners) dataset,
 engineers an estimated revenue target, and builds the 'Revenue Opportunity
 Score' — customers with unused capacity + engagement who are under-monetized.
 """
+import os
 import pandas as pd
 import numpy as np
-import os
 
-# Create the 'artifacts' directory if it doesn't exist
-os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 RAW_PATH = "BankChurners.csv"
 OUT_PATH = "artifacts/customers_processed.csv"
+
+# Make sure the artifacts/ folder exists before anything tries to write to it
+os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 
 df = pd.read_csv(RAW_PATH)
 
