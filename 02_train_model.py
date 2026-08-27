@@ -6,6 +6,7 @@ fields that mechanically compose the revenue formula (Total_Trans_Amt,
 Total_Revolving_Bal) so the model explains revenue via genuine behavioral
 and relationship drivers, not algebra.
 """
+import os
 import pandas as pd
 import numpy as np
 import shap
@@ -13,6 +14,8 @@ import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_absolute_error
 from sklearn.preprocessing import OrdinalEncoder
+
+os.makedirs("artifacts", exist_ok=True)
 import xgboost as xgb
 
 df = pd.read_csv("artifacts/customers_processed.csv")
