@@ -6,7 +6,10 @@ Score' — customers with unused capacity + engagement who are under-monetized.
 """
 import pandas as pd
 import numpy as np
+import os
 
+# Create the 'artifacts' directory if it doesn't exist
+os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 RAW_PATH = "BankChurners.csv"
 OUT_PATH = "artifacts/customers_processed.csv"
 
